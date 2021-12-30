@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "description": "A monorepo for shared configs.",
   "scripts": {
+    "prepare": "husky install",
+    "postinstall": "npx lerna exec npm ci",
     "lint": "npx eslint --ext .json,.js --report-unused-disable-directives --cache --fix .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,6 +23,8 @@
   },
   "homepage": "https://github.com/emm-ess/emm-ess-configs#readme",
   "devDependencies": {
+    "@commitlint/cli": "16.0.1",
+    "@commitlint/config-conventional": "16.0.0",
     "@emm-ess-configs/eslint-config": "file:packages/eslint-config",
     "eslint": "7.32.0",
     "eslint-config-standard": "16.0.3",
@@ -36,6 +40,6 @@
     "eslint-plugin-unicorn": "39.0.0",
     "husky": "7.0.4",
     "lerna": "4.0.0",
-    "lint-staged": "^11.1.2"
+    "lint-staged": "12.1.4"
   }
 }
