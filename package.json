@@ -1,39 +1,48 @@
 {
-  "name": "emm-ess-configs",
-  "version": "0.1.0",
-  "description": "A monorepo for shared configs.",
-  "scripts": {
-    "prepare": "husky install",
-    "postinstall": "npx lerna exec npm ci",
-    "lint": "eslint --ext .json,.js --report-unused-disable-directives --cache --fix .",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/emm-ess/emm-ess-configs.git"
-  },
-  "author": {
-    "name": "Marten Schälicke",
-    "email": "hallo@emm-ess.de",
-    "url": "https://emm-ess.de"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/emm-ess/emm-ess-configs/issues"
-  },
-  "homepage": "https://github.com/emm-ess/emm-ess-configs#readme",
-  "devDependencies": {
-    "@commitlint/cli": "16.0.1",
-    "@commitlint/config-conventional": "16.0.0",
-    "@emm-ess-configs/eslint-config": "file:packages/eslint-config",
-    "husky": "7.0.4",
-    "lerna": "4.0.0",
-    "lint-staged": "12.1.4"
-  },
-  "commitlint": {
-    "extends": "@commitlint/config-conventional"
-  },
-  "lint-staged": {
-    "*.{js,json}": "eslint --cache --fix"
-  }
+    "name": "emm-ess-configs",
+    "version": "0.1.0",
+    "description": "A monorepo for shared configs.",
+    "type": "module",
+    "scripts": {
+        "prepare": "husky",
+        "lint": "eslint --report-unused-disable-directives --cache --fix .",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/emm-ess/emm-ess-configs.git"
+    },
+    "author": {
+        "name": "Marten Schälicke",
+        "email": "hallo@emm-ess.de",
+        "url": "https://emm-ess.de"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/emm-ess/emm-ess-configs/issues"
+    },
+    "homepage": "https://github.com/emm-ess/emm-ess-configs#readme",
+    "workspaces": [
+        "packages/*"
+    ],
+    "devDependencies": {
+        "@commitlint/cli": "~19.4.0",
+        "@commitlint/config-conventional": "~19.2.2",
+        "@emm-ess-configs/eslint-config": "*",
+        "eslint": "~9.9.1",
+        "husky": "~9.1.5",
+        "lint-staged": "~15.2.9"
+    },
+    "overrides": {
+        "eslint": "$eslint"
+    },
+    "browserslist": [
+        "maintained node versions"
+    ],
+    "commitlint": {
+        "extends": "@commitlint/config-conventional"
+    },
+    "lint-staged": {
+        "*.{js,json}": "eslint --cache --fix"
+    }
 }
