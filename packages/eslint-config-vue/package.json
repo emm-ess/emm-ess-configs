@@ -29,7 +29,7 @@
     "license": "MIT",
     "dependencies": {
         "@emm-ess-configs/eslint-config": "*",
-        "eslint-plugin-vue": "^9.27.0"
+        "eslint-plugin-vue": "^9.28.0"
     },
     "peerDependencies": {
         "eslint": "^9.8.0"

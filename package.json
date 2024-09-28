@@ -26,12 +26,12 @@
         "packages/*"
     ],
     "devDependencies": {
-        "@commitlint/cli": "~19.4.0",
-        "@commitlint/config-conventional": "~19.2.2",
+        "@commitlint/cli": "~19.5.0",
+        "@commitlint/config-conventional": "~19.5.0",
         "@emm-ess-configs/eslint-config": "*",
-        "eslint": "~9.9.1",
-        "husky": "~9.1.5",
-        "lint-staged": "~15.2.9"
+        "eslint": "~9.11.1",
+        "husky": "~9.1.6",
+        "lint-staged": "~15.2.10"
     },
     "overrides": {
         "eslint": "$eslint"
