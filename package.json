@@ -6,7 +6,8 @@
     "scripts": {
         "prepare": "husky",
         "lint": "eslint --report-unused-disable-directives --cache --fix .",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "version": "lerna version --conventional-commits --no-commit-hooks"
     },
     "repository": {
         "type": "git",
@@ -31,6 +32,7 @@
         "@emm-ess-configs/eslint-config": "*",
         "eslint": "~9.11.1",
         "husky": "~9.1.6",
+        "lerna": "~8.1.8",
         "lint-staged": "~15.2.10"
     },
     "overrides": {
