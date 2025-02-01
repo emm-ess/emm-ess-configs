@@ -1,6 +1,6 @@
 {
     "name": "@emm-ess-configs/eslint-config",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "The base eslint config for my projects.",
     "type": "module",
     "exports": {
@@ -28,18 +28,18 @@
     "bugs": "https://github.com/emm-ess/emm-ess-configs/issues",
     "license": "MIT",
     "dependencies": {
-        "@eslint/compat": "^1.1.1",
-        "@eslint/eslintrc": "^3.1.0",
-        "@eslint/js": "^9.11.1",
-        "eslint-plugin-compat": "^6.0.1",
-        "eslint-plugin-eslint-comments": "^3.2.0",
-        "eslint-plugin-import": "^2.30.0",
-        "eslint-plugin-json": "^4.0.1",
-        "eslint-plugin-simple-import-sort": "^12.1.1",
-        "eslint-plugin-sonarjs": "^2.0.2",
-        "eslint-plugin-unicorn": "^55.0.0",
-        "neostandard": "^0.11.6",
-        "typescript-eslint": "^8.7.0"
+        "@eslint/compat": "~1.2.6",
+        "@eslint/eslintrc": "~3.2.0",
+        "@eslint/js": "~9.19.0",
+        "eslint-plugin-compat": "~6.0.2",
+        "eslint-plugin-eslint-comments": "~3.2.0",
+        "eslint-plugin-import": "~2.31.0",
+        "eslint-plugin-json": "~4.0.1",
+        "eslint-plugin-simple-import-sort": "~12.1.1",
+        "eslint-plugin-sonarjs": "~3.0.1",
+        "eslint-plugin-unicorn": "~56.0.1",
+        "neostandard": "~0.12.0",
+        "typescript-eslint": "~8.22.0"
     },
     "peerDependencies": {
         "eslint": "^9.8.0"

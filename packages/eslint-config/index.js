@@ -74,6 +74,12 @@ export default [
                         prefer: 'type-imports',
                     }],
                     '@typescript-eslint/consistent-type-definitions': ['warn', 'type'],
+
+                    // ToDo: check why turning off sonarjs-rules for ts is needed
+                    'sonarjs/prefer-enum-initializers': 0,
+                    'sonarjs/prefer-nullish-coalescing': 0,
+                    'sonarjs/different-types-comparison': 0,
+                    '@stylistic/block-spacing': ['error', 'never'],
                 },
             },
         ],
@@ -95,6 +101,7 @@ export default [
             '@stylistic/brace-style': ['error', 'stroustrup', {
                 allowSingleLine: true,
             }],
+            '@stylistic/block-spacing': ['error', 'never'],
             '@stylistic/space-before-function-paren': ['error', {
                 anonymous: 'never',
                 named: 'never',
@@ -130,10 +137,7 @@ export default [
             'simple-import-sort/exports': 'error',
 
             'sonarjs/todo-tag': 0,
-
-            // ToDo: check why turning off sonarjs-rules for ts is needed
-            'sonarjs/prefer-enum-initializers': 0,
-            'sonarjs/prefer-nullish-coalescing': 0,
+            'sonarjs/fixme-tag': 0,
         },
     },
 ]
