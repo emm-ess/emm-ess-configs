@@ -1,6 +1,6 @@
 {
     "name": "@emm-ess-configs/eslint-config-vue",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "description": "The base eslint config for my vue projects.",
     "type": "module",
     "exports": {
@@ -27,7 +27,7 @@
     "bugs": "https://github.com/emm-ess/emm-ess-configs/issues",
     "license": "MIT",
     "dependencies": {
-        "@emm-ess-configs/eslint-config": "^0.2.1",
+        "@emm-ess-configs/eslint-config": "^0.2.2",
         "eslint-plugin-vue": "^10.0.0"
     },
     "peerDependencies": {

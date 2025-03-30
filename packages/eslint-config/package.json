@@ -1,6 +1,6 @@
 {
     "name": "@emm-ess-configs/eslint-config",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "description": "The base eslint config for my projects.",
     "type": "module",
     "exports": {
