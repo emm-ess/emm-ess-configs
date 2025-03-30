@@ -27,10 +27,10 @@
     "bugs": "https://github.com/emm-ess/emm-ess-configs/issues",
     "license": "MIT",
     "dependencies": {
-        "@emm-ess-configs/eslint-config": "~0.2.1",
-        "eslint-plugin-vue": "~9.32.0"
+        "@emm-ess-configs/eslint-config": "^0.2.1",
+        "eslint-plugin-vue": "^10.0.0"
     },
     "peerDependencies": {
-        "eslint": "^9.8.0"
+        "eslint": "^9.23.0"
     }
 }

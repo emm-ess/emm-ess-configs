@@ -28,20 +28,20 @@
     "bugs": "https://github.com/emm-ess/emm-ess-configs/issues",
     "license": "MIT",
     "dependencies": {
-        "@eslint/compat": "~1.2.6",
-        "@eslint/eslintrc": "~3.2.0",
-        "@eslint/js": "~9.19.0",
-        "eslint-plugin-compat": "~6.0.2",
-        "eslint-plugin-eslint-comments": "~3.2.0",
-        "eslint-plugin-import": "~2.31.0",
-        "eslint-plugin-json": "~4.0.1",
-        "eslint-plugin-simple-import-sort": "~12.1.1",
-        "eslint-plugin-sonarjs": "~3.0.1",
-        "eslint-plugin-unicorn": "~56.0.1",
-        "neostandard": "~0.12.0",
-        "typescript-eslint": "~8.22.0"
+        "@eslint/compat": "^1.2.7",
+        "@eslint/eslintrc": "^3.3.1",
+        "@eslint/js": "^9.23.0",
+        "eslint-plugin-compat": "^6.0.2",
+        "eslint-plugin-eslint-comments": "^3.2.0",
+        "eslint-plugin-import": "^2.31.0",
+        "eslint-plugin-json": "^4.0.1",
+        "eslint-plugin-simple-import-sort": "^12.1.1",
+        "eslint-plugin-sonarjs": "^3.0.2",
+        "eslint-plugin-unicorn": "^58.0.0",
+        "neostandard": "^0.12.1",
+        "typescript-eslint": "^8.28.0"
     },
     "peerDependencies": {
-        "eslint": "^9.8.0"
+        "eslint": "^9.23.0"
     }
 }
