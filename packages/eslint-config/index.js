@@ -48,7 +48,10 @@ export default [
     },
     js.configs.recommended,
     ...neostandard({ts: true}),
-    json.configs.recommended,
+    {
+        files: ['**/*.json'],
+        ...json.configs['recommended'],
+    },
     compat.configs['flat/recommended'],
     sonarjs.configs.recommended,
     {
