@@ -1,6 +1,6 @@
 {
     "name": "@emm-ess-configs/eslint-config-vue",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "description": "The base eslint config for my vue projects.",
     "keywords": [
         "eslint",
@@ -26,7 +26,7 @@
         "lint": "eslint --report-unused-disable-directives --cache --fix ."
     },
     "dependencies": {
-        "@emm-ess-configs/eslint-config": "^0.2.2",
+        "@emm-ess-configs/eslint-config": "^0.2.3",
         "eslint-plugin-vue": "^10.0.0",
         "typescript-eslint": "^8.28.0"
     },
