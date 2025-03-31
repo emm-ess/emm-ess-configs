@@ -2,29 +2,40 @@
     "name": "emm-ess-configs",
     "version": "0.1.0",
     "description": "A monorepo for shared configs.",
-    "type": "module",
-    "scripts": {
-        "prepare": "husky",
-        "lint": "eslint --report-unused-disable-directives --cache --fix .",
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "version": "lerna version --conventional-commits --no-commit-hooks"
+    "homepage": "https://github.com/emm-ess/emm-ess-configs#readme",
+    "bugs": {
+        "url": "https://github.com/emm-ess/emm-ess-configs/issues"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/emm-ess/emm-ess-configs.git"
     },
+    "license": "MIT",
     "author": {
         "name": "Marten Schälicke",
-        "email": "hallo@emm-ess.de",
         "url": "https://emm-ess.de"
     },
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/emm-ess/emm-ess-configs/issues"
-    },
-    "homepage": "https://github.com/emm-ess/emm-ess-configs#readme",
+    "type": "module",
     "workspaces": [
         "packages/*"
+    ],
+    "scripts": {
+        "prepare": "husky",
+        "lint": "npm-run-all -p lint:*",
+        "lint:script": "eslint --report-unused-disable-directives --cache --fix .",
+        "lint:package-json": "sort-package-json package.json \"packages/*/package.json\"",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "version": "lerna version --conventional-commits --no-commit-hooks"
+    },
+    "commitlint": {
+        "extends": "@commitlint/config-conventional"
+    },
+    "lint-staged": {
+        "*.{js,json}": "eslint --cache --fix",
+        "package.json": "sort-package-json --quiet"
+    },
+    "browserslist": [
+        "maintained node versions"
     ],
     "devDependencies": {
         "@commitlint/cli": "~19.8.0",
@@ -33,18 +44,11 @@
         "eslint": "^9.23.0",
         "husky": "~9.1.7",
         "lerna": "~8.2.1",
-        "lint-staged": "~15.5.0"
+        "lint-staged": "~15.5.0",
+        "npm-run-all2": "^7.0.2",
+        "sort-package-json": "^3.0.0"
     },
     "overrides": {
         "eslint": "^9.23.0"
-    },
-    "browserslist": [
-        "maintained node versions"
-    ],
-    "commitlint": {
-        "extends": "@commitlint/config-conventional"
-    },
-    "lint-staged": {
-        "*.{js,json}": "eslint --cache --fix"
     }
 }

@@ -2,6 +2,22 @@
     "name": "@emm-ess-configs/eslint-config-vue",
     "version": "0.2.2",
     "description": "The base eslint config for my vue projects.",
+    "keywords": [
+        "eslint",
+        "eslintconfig"
+    ],
+    "homepage": "https://github.com/emm-ess/emm-ess-configs",
+    "bugs": "https://github.com/emm-ess/emm-ess-configs/issues",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/emm-ess/emm-ess-configs.git",
+        "directory": "packages/eslint-config-vue"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Marten Schälicke",
+        "url": "https://emm-ess.de"
+    },
     "type": "module",
     "exports": {
         ".": "./index.js"
@@ -9,23 +25,6 @@
     "scripts": {
         "lint": "eslint --report-unused-disable-directives --cache --fix ."
     },
-    "keywords": [
-        "eslint",
-        "eslintconfig"
-    ],
-    "author": {
-        "name": "Marten Schälicke",
-        "email": "hallo@emm-ess.de",
-        "url": "https://emm-ess.de"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/emm-ess/emm-ess-configs.git",
-        "directory": "packages/eslint-config-vue"
-    },
-    "homepage": "https://github.com/emm-ess/emm-ess-configs",
-    "bugs": "https://github.com/emm-ess/emm-ess-configs/issues",
-    "license": "MIT",
     "dependencies": {
         "@emm-ess-configs/eslint-config": "^0.2.2",
         "eslint-plugin-vue": "^10.0.0",
