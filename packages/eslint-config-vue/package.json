@@ -27,8 +27,8 @@
     },
     "dependencies": {
         "@emm-ess-configs/eslint-config": "^0.2.3",
-        "eslint-plugin-vue": "^10.0.0",
-        "typescript-eslint": "^8.28.0"
+        "eslint-plugin-vue": "^10.3.0",
+        "typescript-eslint": "^8.35.1"
     },
     "peerDependencies": {
         "eslint": "^9.23.0"
