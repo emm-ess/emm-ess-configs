@@ -4,6 +4,8 @@ import url from 'node:url'
 import {fixupPluginRules} from '@eslint/compat'
 import {FlatCompat} from '@eslint/eslintrc'
 import js from '@eslint/js'
+import type {ESLint} from 'eslint'
+import {defineConfig} from 'eslint/config'
 import compat from 'eslint-plugin-compat'
 import json from 'eslint-plugin-json'
 import sonarjs from 'eslint-plugin-sonarjs'
@@ -17,11 +19,11 @@ const compatThingy = new FlatCompat({
 })
 
 /**
- * @param {string} name the pugin name
+ * @param {string} name the plugin name
  * @param {string} alias the plugin alias
  * @returns {import("eslint").ESLint.Plugin}
  */
-function legacyPlugin(name, alias = name) {
+function legacyPlugin(name: string, alias = name): ESLint.Plugin {
     const plugin = compatThingy.plugins(name)[0]?.plugins?.[alias]
 
     if (!plugin) {
@@ -31,7 +33,7 @@ function legacyPlugin(name, alias = name) {
     return fixupPluginRules(plugin)
 }
 
-export default [
+export default defineConfig(
     {
         ignores: [
             '!.*',
@@ -63,7 +65,7 @@ export default [
             'eslint-comments': legacyPlugin('eslint-plugin-eslint-comments', 'eslint-comments'),
         },
     },
-    ...tseslint.config({
+    ...defineConfig({
         files: ['*.ts', '*.tsx'],
         extends: [
             ...tseslint.configs.strict,
@@ -143,4 +145,4 @@ export default [
             'sonarjs/fixme-tag': 0,
         },
     },
-]
+)

@@ -1,11 +1,12 @@
-import pluginVue from 'eslint-plugin-vue'
+import {defineConfig} from 'eslint/config'
+import {configs} from 'eslint-plugin-vue'
 import tseslint from 'typescript-eslint'
 
 import typeChecked from '@emm-ess-configs/eslint-config/typeChecked'
 
-export default [
+export default defineConfig(
     ...typeChecked,
-    ...pluginVue.configs['flat/recommended'],
+    ...configs['flat/recommended'],
     {
         files: ['**/*.vue'],
         languageOptions: {
@@ -40,4 +41,4 @@ export default [
             'sonarjs/pluginRules-of-hooks': 0,
         },
     },
-]
+)

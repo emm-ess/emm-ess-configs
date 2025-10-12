@@ -1,10 +1,11 @@
+import {defineConfig} from 'eslint/config'
 import tseslint from 'typescript-eslint'
 
 import baseConfig from './index.js'
 
-export default [
+export default defineConfig(
     ...baseConfig,
-    ...tseslint.config({
+    ...defineConfig({
         files: ['*.ts', '*.tsx'],
         extends: [
             ...tseslint.configs.strictTypeCheckedOnly,
@@ -23,4 +24,4 @@ export default [
             },
         ],
     }),
-]
+)
