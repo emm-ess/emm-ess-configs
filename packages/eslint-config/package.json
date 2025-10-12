@@ -23,6 +23,9 @@
         ".": "./dist/index.js",
         "./typeChecked": "./dist/typeChecked.js"
     },
+    "files": [
+        "*"
+    ],
     "scripts": {
         "build": "rm -rf dist && tsc",
         "lint": "eslint --report-unused-disable-directives --cache --fix .",
