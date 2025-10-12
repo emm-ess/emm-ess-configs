@@ -1,6 +1,6 @@
 {
     "name": "@emm-ess-configs/eslint-config-vue",
-    "version": "0.2.4",
+    "version": "0.3.0",
     "description": "The base eslint config for my vue projects.",
     "keywords": [
         "eslint",
@@ -29,7 +29,7 @@
         "type-check": "tsc --noEmit"
     },
     "dependencies": {
-        "@emm-ess-configs/eslint-config": "^0.2.4",
+        "@emm-ess-configs/eslint-config": "^0.3.0",
         "eslint-plugin-vue": "^10.5.0",
         "typescript-eslint": "^8.46.0"
     },

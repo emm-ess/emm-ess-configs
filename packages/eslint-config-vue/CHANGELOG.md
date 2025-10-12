@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/emm-ess/emm-ess-configs/compare/@emm-ess-configs/eslint-config-vue@0.2.4...@emm-ess-configs/eslint-config-vue@0.3.0) (2025-10-12)
+
+
+### Features
+
+* add typescript ([8faa4dc](https://github.com/emm-ess/emm-ess-configs/commit/8faa4dceeb673cfe426695678743941c521acb8d))
+
+
+
+
+
 ## [0.2.4](https://github.com/emm-ess/emm-ess-configs/compare/@emm-ess-configs/eslint-config-vue@0.2.3...@emm-ess-configs/eslint-config-vue@0.2.4) (2025-07-04)
 
 **Note:** Version bump only for package @emm-ess-configs/eslint-config-vue
