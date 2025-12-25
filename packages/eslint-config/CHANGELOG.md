@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.2](https://github.com/emm-ess/emm-ess-configs/compare/@emm-ess-configs/eslint-config@0.3.1...@emm-ess-configs/eslint-config@0.3.2) (2025-12-25)
+
+**Note:** Version bump only for package @emm-ess-configs/eslint-config
+
+
+
+
+
 ## [0.3.1](https://github.com/emm-ess/emm-ess-configs/compare/@emm-ess-configs/eslint-config@0.3.0...@emm-ess-configs/eslint-config@0.3.1) (2025-10-12)
 
 
