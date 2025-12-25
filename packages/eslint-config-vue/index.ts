@@ -1,12 +1,12 @@
 import {defineConfig} from 'eslint/config'
-import {configs} from 'eslint-plugin-vue'
+import eslintPluginVue from 'eslint-plugin-vue'
 import tseslint from 'typescript-eslint'
 
 import typeChecked from '@emm-ess-configs/eslint-config/typeChecked'
 
 export default defineConfig(
     ...typeChecked,
-    ...configs['flat/recommended'],
+    ...eslintPluginVue.configs['flat/recommended'],
     {
         files: ['**/*.vue'],
         languageOptions: {

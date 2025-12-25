@@ -1,6 +1,6 @@
 import globals from 'globals'
 
-import baseConfig from '@emm-ess-configs/eslint-config'
+import baseConfig from '@emm-ess-configs/eslint-config/typeChecked'
 
 export default [
     {
