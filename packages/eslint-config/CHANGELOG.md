@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/emm-ess/emm-ess-configs/compare/@emm-ess-configs/eslint-config@0.3.2...@emm-ess-configs/eslint-config@0.4.0) (2026-05-29)
+
+
+### Features
+
+* bigger dependency update ([a86cf53](https://github.com/emm-ess/emm-ess-configs/commit/a86cf5304297028325759684a23cb5a57bcad646))
+
+
+
+
+
 ## [0.3.2](https://github.com/emm-ess/emm-ess-configs/compare/@emm-ess-configs/eslint-config@0.3.1...@emm-ess-configs/eslint-config@0.3.2) (2025-12-25)
 
 **Note:** Version bump only for package @emm-ess-configs/eslint-config
