@@ -2,7 +2,7 @@ import {defineConfig} from 'eslint/config'
 import eslintPluginVue from 'eslint-plugin-vue'
 import tseslint from 'typescript-eslint'
 
-import typeChecked from '@emm-ess-configs/eslint-config/typeChecked'
+import typeChecked from '@emm-ess-configs/eslint-config/type-checked'
 
 export default defineConfig(
     ...typeChecked,
@@ -37,8 +37,19 @@ export default defineConfig(
                 },
             }],
 
+            'unicorn/filename-case': ['error', {
+                case: 'pascalCase',
+            }],
+
             // turn off react centric rule
             'sonarjs/pluginRules-of-hooks': 0,
+        },
+    },
+    {
+        rules: {
+            // since vue-projects are written in conjunction with vite, it's recommended to turn this rule off
+            // @see https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-unresolved.md#when-not-to-use-it
+            'import-x/no-unresolved': 0,
         },
     },
 )

@@ -6,7 +6,7 @@ import baseConfig from './index.js'
 export default defineConfig(
     ...baseConfig,
     ...defineConfig({
-        files: ['*.ts', '*.tsx'],
+        files: ['**/*.ts', '**/*.tsx'],
         extends: [
             ...tseslint.configs.strictTypeCheckedOnly,
             ...tseslint.configs.stylisticTypeCheckedOnly,

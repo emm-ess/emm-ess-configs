@@ -1,37 +1,15 @@
-import path from 'node:path'
-import url from 'node:url'
-
-import {fixupPluginRules} from '@eslint/compat'
-import {FlatCompat} from '@eslint/eslintrc'
 import js from '@eslint/js'
-import type {ESLint} from 'eslint'
+import commentConfigs from '@eslint-community/eslint-plugin-eslint-comments/configs'
 import {defineConfig} from 'eslint/config'
 import compat from 'eslint-plugin-compat'
-import json from 'eslint-plugin-json'
+import {importX} from 'eslint-plugin-import-x'
+import pluginJson from 'eslint-plugin-json'
+import simpleImportSort from 'eslint-plugin-simple-import-sort'
 import sonarjs from 'eslint-plugin-sonarjs'
 import unicorn from 'eslint-plugin-unicorn'
 import globals from 'globals'
 import neostandard from 'neostandard'
 import tseslint from 'typescript-eslint'
-
-const compatThingy = new FlatCompat({
-    baseDirectory: path.dirname(url.fileURLToPath(import.meta.url)),
-})
-
-/**
- * @param {string} name the plugin name
- * @param {string} alias the plugin alias
- * @returns {import("eslint").ESLint.Plugin}
- */
-function legacyPlugin(name: string, alias = name): ESLint.Plugin {
-    const plugin = compatThingy.plugins(name)[0]?.plugins?.[alias]
-
-    if (!plugin) {
-        throw new Error(`Unable to resolve plugin ${name} and/or alias ${alias}`)
-    }
-
-    return fixupPluginRules(plugin)
-}
 
 export default defineConfig(
     {
@@ -42,59 +20,33 @@ export default defineConfig(
         ],
     },
     {
-        files: ['*.js', '*.cjs', '*.mjs', '*.json'],
         languageOptions: {
             globals: globals.builtin,
             ecmaVersion: 'latest',
         },
     },
     js.configs.recommended,
+    commentConfigs.recommended,
     ...neostandard({ts: true}),
-    {
-        files: ['**/*.json'],
-        ...json.configs['recommended'],
-    },
+    importX.flatConfigs.recommended,
+    pluginJson.configs.recommended,
     compat.configs['flat/recommended'],
     sonarjs.configs.recommended,
+    unicorn.configs.recommended,
     {
         name: 'emm-ess-config/plugins',
         plugins: {
-            unicorn,
-            import: legacyPlugin('eslint-plugin-import', 'import'),
-            'simple-import-sort': legacyPlugin('eslint-plugin-simple-import-sort', 'simple-import-sort'),
-            'eslint-comments': legacyPlugin('eslint-plugin-eslint-comments', 'eslint-comments'),
+            'simple-import-sort': simpleImportSort,
         },
     },
-    ...defineConfig({
-        files: ['*.ts', '*.tsx'],
-        extends: [
-            ...tseslint.configs.strict,
-            ...tseslint.configs.stylistic,
-            // ...compatThingy.plugins('eslint-plugin-deprecation'),
-            ...compatThingy.extends('plugin:import/typescript'),
-            {
-                name: 'emm-ess-config/typescript',
-                rules: {
-                    '@typescript-eslint/consistent-type-imports': ['error', {
-                        prefer: 'type-imports',
-                    }],
-                    '@typescript-eslint/consistent-type-definitions': ['warn', 'type'],
-
-                    // ToDo: check why turning off sonarjs-rules for ts is needed
-                    'sonarjs/prefer-enum-initializers': 0,
-                    'sonarjs/prefer-nullish-coalescing': 0,
-                    'sonarjs/different-types-comparison': 0,
-                    '@stylistic/block-spacing': ['error', 'never'],
-                },
-            },
-        ],
-    }),
     {
         name: 'emm-ess-config/rules',
         rules: {
+            // @ts-expect-error it works, that's good enough for now
             'no-console': process.env.NODE_ENV === 'production'
                 ? 'error'
                 : 0,
+            // @ts-expect-error it works, that's good enough for now
             'no-debugger': process.env.NODE_ENV === 'production'
                 ? 'error'
                 : 0,
@@ -135,6 +87,19 @@ export default defineConfig(
             '@stylistic/object-curly-spacing': ['error', 'never'],
             '@stylistic/arrow-parens': ['error', 'always'],
 
+            // imports
+            'import-x/no-extraneous-dependencies': ['error', {
+                includeTypes: true,
+            }],
+            'import-x/no-cycle': 'error',
+            'import-x/no-mutable-exports': 'error',
+            'import-x/no-useless-path-segments': ['warn', {
+                noUselessIndex: true,
+            }],
+            'import-x/no-relative-packages': 'error',
+            'import-x/newline-after-import': 'warn',
+            'import-x/no-anonymous-default-export': 'warn',
+
             // import sorting
             'sort-import': 0,
             'import/order': 0,
@@ -143,6 +108,31 @@ export default defineConfig(
 
             'sonarjs/todo-tag': 0,
             'sonarjs/fixme-tag': 0,
+            'unicorn/prevent-abbreviations': 0,
         },
     },
+    ...defineConfig({
+        files: ['**/*.ts', '**/*.tsx'],
+        extends: [
+            ...tseslint.configs.strict,
+            ...tseslint.configs.stylistic,
+            {
+                name: 'emm-ess-config/typescript',
+                rules: {
+                    '@typescript-eslint/consistent-type-imports': ['error', {
+                        prefer: 'type-imports',
+                    }],
+                    '@typescript-eslint/consistent-type-definitions': ['warn', 'type'],
+
+                    // ToDo: check why turning off sonarjs-rules for ts is needed
+                    'sonarjs/prefer-enum-initializers': 0,
+                    'sonarjs/prefer-nullish-coalescing': 0,
+                    'sonarjs/different-types-comparison': 0,
+                    '@stylistic/block-spacing': ['error', 'never'],
+
+                    'import-x/no-unresolved': 0,
+                },
+            },
+        ],
+    }),
 )
