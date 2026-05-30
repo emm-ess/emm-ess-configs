@@ -1,6 +1,6 @@
 {
     "name": "@emm-ess-configs/eslint-config-vue",
-    "version": "0.4.0",
+    "version": "0.4.1",
     "description": "The base eslint config for my vue projects.",
     "keywords": [
         "eslint",
@@ -29,7 +29,7 @@
     "scripts": {
         "build": "rm -rf dist && tsc",
         "lint": "eslint --report-unused-disable-directives --cache --fix .",
-        "prepublish": "build",
+        "prepare": "npm run build",
         "type-check": "tsc --noEmit"
     },
     "browserslist": [
