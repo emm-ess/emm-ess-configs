@@ -9,7 +9,6 @@ import {configs as packageJsonConfigs} from 'eslint-plugin-package-json'
 import simpleImportSort from 'eslint-plugin-simple-import-sort'
 import sonarjs from 'eslint-plugin-sonarjs'
 import unicorn from 'eslint-plugin-unicorn'
-import globals from 'globals'
 import {neostandard} from 'neostandard'
 import tseslint from 'typescript-eslint'
 
@@ -17,19 +16,13 @@ import {scriptFiles} from './helper.js'
 
 export default defineConfig([
     {
-        languageOptions: {
-            globals: globals.builtin,
-            ecmaVersion: 'latest',
-        },
-    },
-    {
         files: ['**/*.md'],
         plugins: {markdown},
         extends: ['markdown/recommended'],
     },
     {
         files: ['**/*.json'],
-        ignores: ['package-lock.json'],
+        ignores: ['**/package-lock.json'],
         plugins: {json},
         language: 'json/json',
         extends: ['json/recommended'],
@@ -43,7 +36,7 @@ export default defineConfig([
     ...neostandard({
         ts: true,
         files: scriptFiles,
-        filesTs: ['**/*.vue'],
+        filesTs: ['**/*.?(c|m)ts', '**/*.vue'],
     }),
     {
         files: scriptFiles,
@@ -126,8 +119,6 @@ export default defineConfig([
             }],
 
             // import sorting
-            'sort-import': 0,
-            'import/order': 0,
             'simple-import-sort/imports': 'error',
             'simple-import-sort/exports': 'error',
 
@@ -137,7 +128,7 @@ export default defineConfig([
         },
     },
     ...defineConfig({
-        files: ['**/*.ts', '**/*.tsx'],
+        files: ['**/*.?(c|m)ts', '**/*.tsx'],
         extends: [
             ...tseslint.configs.strict,
             ...tseslint.configs.stylistic,
@@ -153,7 +144,6 @@ export default defineConfig([
                     'sonarjs/prefer-enum-initializers': 0,
                     'sonarjs/prefer-nullish-coalescing': 0,
                     'sonarjs/different-types-comparison': 0,
-                    '@stylistic/block-spacing': ['error', 'never'],
 
                     'import-x/no-unresolved': 0,
                 },

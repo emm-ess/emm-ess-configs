@@ -40,9 +40,6 @@ export default defineConfig([
             'unicorn/filename-case': ['error', {
                 case: 'pascalCase',
             }],
-
-            // turn off react centric rule
-            'sonarjs/pluginRules-of-hooks': 0,
         },
     },
     {

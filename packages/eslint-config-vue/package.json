@@ -24,7 +24,7 @@
         "./helper": "./dist/helper.js"
     },
     "files": [
-        "*"
+        "dist"
     ],
     "scripts": {
         "build": "rm -rf dist && tsc",
@@ -49,10 +49,5 @@
     "peerDependencies": {
         "eslint": "^10",
         "typescript": "^6"
-    },
-    "peerDependenciesMeta": {
-        "typescript": {
-            "optional": true
-        }
     }
 }
