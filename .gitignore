@@ -1,6 +1,12 @@
 dist
 .notes
 *.rsls
+.wolf/
+.claude/
+.codex/
+.cursor/
+AGENTS.md
+CLAUDE.md
 
 # ---------------- Project Misc
 # Node

@@ -1,46 +1,67 @@
 import js from '@eslint/js'
+import json from '@eslint/json'
+import markdown from '@eslint/markdown'
 import commentConfigs from '@eslint-community/eslint-plugin-eslint-comments/configs'
 import {defineConfig} from 'eslint/config'
 import compat from 'eslint-plugin-compat'
 import {importX} from 'eslint-plugin-import-x'
-import pluginJson from 'eslint-plugin-json'
+import {configs as packageJsonConfigs} from 'eslint-plugin-package-json'
 import simpleImportSort from 'eslint-plugin-simple-import-sort'
 import sonarjs from 'eslint-plugin-sonarjs'
 import unicorn from 'eslint-plugin-unicorn'
 import globals from 'globals'
-import neostandard from 'neostandard'
+import {neostandard} from 'neostandard'
 import tseslint from 'typescript-eslint'
 
-export default defineConfig(
-    {
-        ignores: [
-            '!.*',
-            '!package.json',
-            '**/node_modules',
-        ],
-    },
+import {scriptFiles} from './helper.js'
+
+export default defineConfig([
     {
         languageOptions: {
             globals: globals.builtin,
             ecmaVersion: 'latest',
         },
     },
-    js.configs.recommended,
-    commentConfigs.recommended,
-    ...neostandard({ts: true}),
-    importX.flatConfigs.recommended,
-    pluginJson.configs.recommended,
-    compat.configs['flat/recommended'],
-    sonarjs.configs.recommended,
-    unicorn.configs.recommended,
     {
-        name: 'emm-ess-config/plugins',
+        files: ['**/*.md'],
+        plugins: {markdown},
+        extends: ['markdown/recommended'],
+    },
+    {
+        files: ['**/*.json'],
+        ignores: ['package-lock.json'],
+        plugins: {json},
+        language: 'json/json',
+        extends: ['json/recommended'],
+    },
+    {
+        files: ['**/tsconfig*.json', '**/jsconfig*.json', '.vscode/*.json'],
+        language: 'json/jsonc',
+        languageOptions: {allowTrailingCommas: true},
+    },
+    packageJsonConfigs.recommended,
+    ...neostandard({
+        ts: true,
+        files: scriptFiles,
+        filesTs: ['**/*.vue'],
+    }),
+    {
+        files: scriptFiles,
         plugins: {
             'simple-import-sort': simpleImportSort,
         },
+        extends: [
+            js.configs.recommended,
+            commentConfigs.recommended,
+            importX.flatConfigs.recommended,
+            compat.configs['flat/recommended'],
+            sonarjs.configs.recommended,
+            unicorn.configs.recommended,
+        ],
     },
     {
         name: 'emm-ess-config/rules',
+        files: scriptFiles,
         rules: {
             // @ts-expect-error it works, that's good enough for now
             'no-console': process.env.NODE_ENV === 'production'
@@ -93,12 +114,16 @@ export default defineConfig(
             }],
             'import-x/no-cycle': 'error',
             'import-x/no-mutable-exports': 'error',
-            'import-x/no-useless-path-segments': ['warn', {
-                noUselessIndex: true,
-            }],
+            'import-x/no-useless-path-segments': 'warn',
             'import-x/no-relative-packages': 'error',
             'import-x/newline-after-import': 'warn',
             'import-x/no-anonymous-default-export': 'warn',
+
+            'unicorn/name-replacements': ['error', {
+                replacements: {
+                    env: false,
+                },
+            }],
 
             // import sorting
             'sort-import': 0,
@@ -135,4 +160,10 @@ export default defineConfig(
             },
         ],
     }),
-)
+    {
+        // seems like unicorn has a bug in this rule
+        name: 'emm-ess-config/bug-fix',
+        files: ['**/eslint.config.*'],
+        rules: {'unicorn/no-top-level-side-effects': 0},
+    },
+])

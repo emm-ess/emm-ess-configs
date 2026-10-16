@@ -4,7 +4,7 @@ import tseslint from 'typescript-eslint'
 
 import typeChecked from '@emm-ess-configs/eslint-config/type-checked'
 
-export default defineConfig(
+export default defineConfig([
     ...typeChecked,
     ...eslintPluginVue.configs['flat/recommended'],
     {
@@ -52,4 +52,4 @@ export default defineConfig(
             'import-x/no-unresolved': 0,
         },
     },
-)
+])

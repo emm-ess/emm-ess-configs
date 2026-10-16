@@ -29,7 +29,7 @@
     "scripts": {
         "build": "rm -rf dist && tsc",
         "lint": "eslint --report-unused-disable-directives --cache --fix .",
-        "prepare": "npm run build",
+        "prepublishOnly": "npm run build",
         "type-check": "tsc --noEmit"
     },
     "browserslist": [
@@ -37,16 +37,22 @@
     ],
     "dependencies": {
         "@emm-ess-configs/eslint-config": "^0.4.0",
-        "eslint-plugin-vue": "^10.9.1",
-        "typescript-eslint": "^8.60.0"
+        "eslint-plugin-vue": "^10.11.1",
+        "typescript-eslint": "^8.71.2"
     },
     "devDependencies": {
-        "@tsconfig/node24": "^24.0.4",
+        "@tsconfig/node24": "^24.0.5",
         "@tsconfig/strictest": "^2.0.8",
         "@types/node": "^24.12.4",
         "typescript": "^6.0.3"
     },
     "peerDependencies": {
-        "eslint": "^9.39.4"
+        "eslint": "^10",
+        "typescript": "^6"
+    },
+    "peerDependenciesMeta": {
+        "typescript": {
+            "optional": true
+        }
     }
 }

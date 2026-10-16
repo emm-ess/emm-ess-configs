@@ -1,7 +1,7 @@
 # Shared Eslint Config
 
 typeChecked needs additional config
-```
+```json lines
 {
     languageOptions: {
         parserOptions: {
@@ -9,5 +9,5 @@ typeChecked needs additional config
             tsconfigRootDir: import.meta.dirname,
         },
     },
-},
+}
 ```

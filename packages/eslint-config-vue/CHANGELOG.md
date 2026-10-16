@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [0.4.0](https://github.com/emm-ess/emm-ess-configs/compare/@emm-ess-configs/eslint-config-vue@0.3.2...@emm-ess-configs/eslint-config-vue@0.4.0) (2026-05-29)
+## [0.4.0](https://github.com/emm-ess/emm-ess-configs/compare/@emm-ess-configs/eslint-config-vue@0.3.2...@emm-ess-configs/eslint-config-vue@0.4.0) (2026-05-29)
 
 
 ### Features
@@ -33,7 +33,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [0.3.0](https://github.com/emm-ess/emm-ess-configs/compare/@emm-ess-configs/eslint-config-vue@0.2.4...@emm-ess-configs/eslint-config-vue@0.3.0) (2025-10-12)
+## [0.3.0](https://github.com/emm-ess/emm-ess-configs/compare/@emm-ess-configs/eslint-config-vue@0.2.4...@emm-ess-configs/eslint-config-vue@0.3.0) (2025-10-12)
 
 
 ### Features
@@ -71,7 +71,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# 0.2.0 (2024-09-28)
+## 0.2.0 (2024-09-28)
 
 
 ### Features

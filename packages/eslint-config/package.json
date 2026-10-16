@@ -30,33 +30,40 @@
     "scripts": {
         "build": "rm -rf dist && tsc",
         "lint": "eslint --report-unused-disable-directives --cache --fix .",
-        "prepare": "npm run build",
+        "prepublishOnly": "npm run build",
         "type-check": "tsc --noEmit"
     },
     "browserslist": [
         "maintained node versions"
     ],
     "dependencies": {
-        "@eslint-community/eslint-plugin-eslint-comments": "^4.7.2",
-        "@eslint/config-helpers": "^0.6.0",
-        "@eslint/js": "^9.39.4",
+        "@eslint-community/eslint-plugin-eslint-comments": "^4.8.1",
+        "@eslint/js": "^10.0.1",
+        "@eslint/json": "^2.1.1",
+        "@eslint/markdown": "^8.0.3",
         "eslint-plugin-compat": "^7.0.2",
-        "eslint-plugin-import-x": "^4.16.2",
-        "eslint-plugin-json": "^4.0.1",
-        "eslint-plugin-simple-import-sort": "^13.0.0",
-        "eslint-plugin-sonarjs": "^4.0.3",
-        "eslint-plugin-unicorn": "^64.0.0",
-        "globals": "^17.6.0",
-        "neostandard": "^0.13.0",
-        "typescript-eslint": "^8.60.0"
+        "eslint-plugin-import-x": "^4.17.1",
+        "eslint-plugin-package-json": "^1.10.1",
+        "eslint-plugin-simple-import-sort": "^14.0.0",
+        "eslint-plugin-sonarjs": "^4.2.2",
+        "eslint-plugin-unicorn": "^78.0.0",
+        "globals": "^17.13.0",
+        "neostandard": "^0.14.1",
+        "typescript-eslint": "^8.71.2"
     },
     "devDependencies": {
-        "@tsconfig/node24": "^24.0.4",
+        "@tsconfig/node24": "^24.0.5",
         "@tsconfig/strictest": "^2.0.8",
         "@types/node": "^24.12.4",
         "typescript": "^6.0.3"
     },
     "peerDependencies": {
-        "eslint": "^9.39.4"
+        "eslint": "^10",
+        "typescript": "^6"
+    },
+    "peerDependenciesMeta": {
+        "typescript": {
+            "optional": true
+        }
     }
 }
