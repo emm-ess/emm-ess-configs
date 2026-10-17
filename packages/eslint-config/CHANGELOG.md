@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/emm-ess/emm-ess-configs/compare/%40emm-ess-configs%2Feslint-config%400.4.0...%40emm-ess-configs%2Feslint-config%400.5.0) (2026-10-17)
+
+* feat!: several small improvements ([220e147](https://github.com/emm-ess/emm-ess-configs/commit/220e147f4cdcc9f9c0030e5b3d569caa67fa46b4))
+* feat!: dependency updates ([3ad367e](https://github.com/emm-ess/emm-ess-configs/commit/3ad367e1ba4493f6a027cf430ca2f4ac2dafb76b))
+
+### Bug Fixes
+
+* add audit feedback ([1c63c75](https://github.com/emm-ess/emm-ess-configs/commit/1c63c75816fae29fd9f8d1091dd6dcf0d0dbfd49))
+
+### BREAKING CHANGES
+
+* eslint v9 -> v10
+* separate browser & node specific rules
+
+
 ## [0.4.0](https://github.com/emm-ess/emm-ess-configs/compare/@emm-ess-configs/eslint-config@0.3.2...@emm-ess-configs/eslint-config@0.4.0) (2026-05-29)
 
 
