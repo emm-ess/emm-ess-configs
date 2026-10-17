@@ -1,6 +1,7 @@
 import {defineConfig} from 'eslint/config'
 
-import {addGitIgnore, globals, scriptFiles} from '@emm-ess-configs/eslint-config/helper'
+import {addGitIgnore, scriptFiles} from '@emm-ess-configs/eslint-config/helper'
+import nodeConfig from '@emm-ess-configs/eslint-config/node'
 import baseConfig from '@emm-ess-configs/eslint-config/type-checked'
 
 export default defineConfig([
@@ -11,15 +12,13 @@ export default defineConfig([
     {
         languageOptions: {
             sourceType: 'module',
-            globals: {
-                ...globals.node,
-            },
             parserOptions: {
                 projectService: true,
             },
         },
     },
     ...baseConfig,
+    ...nodeConfig,
     {
         files: scriptFiles,
         rules: {

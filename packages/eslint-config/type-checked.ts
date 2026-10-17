@@ -1,5 +1,5 @@
 import {defineConfig} from 'eslint/config'
-import tseslint from 'typescript-eslint'
+import {configs as tsEslintConfigs} from 'typescript-eslint'
 
 import baseConfig from './index.js'
 
@@ -8,8 +8,8 @@ export default defineConfig(
     ...defineConfig({
         files: ['**/*.?(c|m)ts', '**/*.tsx'],
         extends: [
-            ...tseslint.configs.strictTypeCheckedOnly,
-            ...tseslint.configs.stylisticTypeCheckedOnly,
+            ...tsEslintConfigs.strictTypeCheckedOnly,
+            ...tsEslintConfigs.stylisticTypeCheckedOnly,
             {
                 name: 'emm-ess-config/type-check',
                 rules: {
@@ -20,6 +20,7 @@ export default defineConfig(
                     '@typescript-eslint/prefer-nullish-coalescing': ['error', {
                         allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: true,
                     }],
+                    '@typescript-eslint/switch-exhaustiveness-check': 'error',
                 },
             },
         ],

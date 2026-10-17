@@ -28,7 +28,7 @@
     ],
     "scripts": {
         "build": "rm -rf dist && tsc",
-        "lint": "eslint --report-unused-disable-directives --cache --fix .",
+        "lint": "eslint --cache --fix .",
         "prepublishOnly": "npm run build",
         "type-check": "tsc --noEmit"
     },

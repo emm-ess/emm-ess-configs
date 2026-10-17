@@ -23,7 +23,7 @@
     "scripts": {
         "build": "npm run build --workspaces",
         "lint": "npm-run-all -p lint:*",
-        "lint:script": "eslint --report-unused-disable-directives --cache --fix .",
+        "lint:script": "eslint --cache --fix .",
         "prepare": "husky && npm run build",
         "test": "npm run build && npm run lint",
         "type-check": "npm run type-check --workspaces",
@@ -46,10 +46,13 @@
         "@commitlint/cli": "~21.2.3",
         "@commitlint/config-conventional": "~21.2.3",
         "@emm-ess-configs/eslint-config": "*",
-        "eslint": "^10.12.0",
+        "eslint": "^10.13.0",
         "husky": "~9.1.7",
         "lerna": "~10.1.1",
         "lint-staged": "~17.6.0",
         "npm-run-all2": "^9.0.3"
+    },
+    "engines": {
+        "node": ">=24"
     }
 }

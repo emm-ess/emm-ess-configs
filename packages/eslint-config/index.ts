@@ -1,20 +1,26 @@
 import js from '@eslint/js'
 import json from '@eslint/json'
 import markdown from '@eslint/markdown'
-import commentConfigs from '@eslint-community/eslint-plugin-eslint-comments/configs'
+import {recommended as commentConfigRecommended} from '@eslint-community/eslint-plugin-eslint-comments/configs'
 import {defineConfig} from 'eslint/config'
-import compat from 'eslint-plugin-compat'
 import {importX} from 'eslint-plugin-import-x'
 import {configs as packageJsonConfigs} from 'eslint-plugin-package-json'
+import {configs as regexConfigs} from 'eslint-plugin-regexp'
 import simpleImportSort from 'eslint-plugin-simple-import-sort'
-import sonarjs from 'eslint-plugin-sonarjs'
+import {configs as sonarjsConfigs} from 'eslint-plugin-sonarjs'
 import unicorn from 'eslint-plugin-unicorn'
 import {neostandard} from 'neostandard'
-import tseslint from 'typescript-eslint'
+import {configs as tsEslintConfigs} from 'typescript-eslint'
 
 import {scriptFiles} from './helper.js'
 
 export default defineConfig([
+    {
+        linterOptions: {
+            reportUnusedDisableDirectives: 'error',
+            reportUnusedInlineConfigs: 'error',
+        },
+    },
     {
         files: ['**/*.md'],
         plugins: {markdown},
@@ -45,11 +51,12 @@ export default defineConfig([
         },
         extends: [
             js.configs.recommended,
-            commentConfigs.recommended,
+            commentConfigRecommended,
             importX.flatConfigs.recommended,
-            compat.configs['flat/recommended'],
-            sonarjs.configs.recommended,
+            importX.flatConfigs.typescript,
+            sonarjsConfigs.recommended,
             unicorn.configs.recommended,
+            regexConfigs.recommended,
         ],
     },
     {
@@ -130,8 +137,8 @@ export default defineConfig([
     ...defineConfig({
         files: ['**/*.?(c|m)ts', '**/*.tsx'],
         extends: [
-            ...tseslint.configs.strict,
-            ...tseslint.configs.stylistic,
+            ...tsEslintConfigs.strict,
+            ...tsEslintConfigs.stylistic,
             {
                 name: 'emm-ess-config/typescript',
                 rules: {

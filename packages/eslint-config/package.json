@@ -21,7 +21,9 @@
     "type": "module",
     "exports": {
         ".": "./dist/index.js",
+        "./browser": "./dist/browser.js",
         "./helper": "./dist/helper.js",
+        "./node": "./dist/node.js",
         "./type-checked": "./dist/type-checked.js"
     },
     "files": [
@@ -29,7 +31,7 @@
     ],
     "scripts": {
         "build": "rm -rf dist && tsc",
-        "lint": "eslint --report-unused-disable-directives --cache --fix .",
+        "lint": "eslint --cache --fix .",
         "prepublishOnly": "npm run build",
         "type-check": "tsc --noEmit"
     },
@@ -41,9 +43,11 @@
         "@eslint/js": "^10.0.1",
         "@eslint/json": "^2.1.1",
         "@eslint/markdown": "^8.0.3",
+        "eslint-import-resolver-typescript": "^4.4.5",
         "eslint-plugin-compat": "^7.0.2",
         "eslint-plugin-import-x": "^4.17.1",
         "eslint-plugin-package-json": "^1.10.1",
+        "eslint-plugin-regexp": "^3.3.1",
         "eslint-plugin-simple-import-sort": "^14.0.0",
         "eslint-plugin-sonarjs": "^4.2.2",
         "eslint-plugin-unicorn": "^78.0.0",
